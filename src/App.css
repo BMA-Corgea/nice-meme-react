@@ -33,6 +33,7 @@
   position: relative;
   left: 20px;
   margin: 20px;
+  padding-top: 20px;
 }
 
 .standardItem:hover {

@@ -4,16 +4,23 @@ import { SelectTheMeme } from "./SelectTheMeme.js";
 import { ItemHolder } from "./ItemHolder.js";
 import { ItemPictureGallery } from "./ItemPictureGallery.js";
 import { ImageElement } from "./ImageElement.js";
+import { firebasePictures } from "../pictures/firebase-pictures.js";
+import { ItemBox } from "./ItemBox.js";
+import { PriceTag } from "./PriceTag.js";
+import { RegionSelecter } from "./RegionSelecter.js";
+import { PasswordField } from "./PasswordField.js";
 
 export class StatefulMeme extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       name: "Dabberton",
-      meme: "Nice meme"
+      meme: "Nice meme",
+      region: "America"
     };
     this.changeTitleName = this.changeTitleName.bind(this);
     this.changeTitleMeme = this.changeTitleMeme.bind(this);
+    this.changeRegionMeme = this.changeRegionMeme.bind(this);
   }
 
   changeTitleName(newTitleName) {
@@ -28,10 +35,22 @@ export class StatefulMeme extends React.Component {
     });
   }
 
+  changeRegionMeme(newRegionMeme) {
+    this.setState({
+      region: newRegionMeme
+    });
+  }
+
   render() {
-    var starStack = [
-      "../pictures/happy-placeholder-star.jpg",
-      "../pictures/unhappy-placeholder-star.jpg"
+    const starStack = [
+      firebasePictures.happyStar,
+      firebasePictures.unhappyStar,
+      firebasePictures.crezyStar
+    ];
+
+    const karaPics = [
+      firebasePictures.karaWithoutBeanie,
+      firebasePictures.karaWithBeanie
     ];
 
     return (
@@ -52,18 +71,56 @@ export class StatefulMeme extends React.Component {
         <br />
         <br />
         <h1>______________________________</h1>
-        <ItemPictureGallery URLStack={starStack} />
-        <br />
-        <br />
-        <h1>______________________________</h1>
-        <ImageElement image="https://i.imgur.com/R85CSNg.jpg" />
-        <br />
-        <br />
-        <h1>______________________________</h1>
         <ImageElement
-          image="../pictures/happy-placeholder-star.jpg"
+          image={firebasePictures.happyStar}
           alt="picture"
+          desc="This is from Firebase"
         />
+        <h1>______________________________</h1>
+        <ItemPictureGallery URLStack={starStack} keyFigure="star" />
+        <br />
+        <br />
+        <h1>______________________________</h1>
+        <ItemBox
+          URLStack={starStack}
+          keyFigure="star"
+          galleryDesc="These are pictures of Starboy in various moods"
+          itemTitle="Starboy"
+          price="1400"
+          region={this.state.region}
+        />
+        <br />
+        <br />
+        <h1>______________________________</h1>
+        <PriceTag price="50.50" region={this.state.region} />
+        <br />
+        <br />
+        <h1>______________________________</h1>
+        <h3>Where are you from?</h3>
+        <RegionSelecter onChange={this.changeRegionMeme} />
+        <br />
+        <br />
+        <h1>______________________________</h1>
+        <PasswordField children="Hi world" password="Meme" />
+        <br />
+        <br />
+        <h1>______________________________</h1>
+        <h3>Unlock Kara</h3>
+        <PasswordField
+          children={
+            <ItemBox
+              URLStack={karaPics}
+              keyFigure="Cute"
+              galleryDesc="These are pictures of Kara from Detroit: Become Human"
+              itemTitle="AX400 (Kara android from Detroit: Become Human)"
+              price="1337"
+              region={this.state.region}
+            />
+          }
+          password="Kara"
+        />
+        <br />
+        <br />
       </div>
     );
   }

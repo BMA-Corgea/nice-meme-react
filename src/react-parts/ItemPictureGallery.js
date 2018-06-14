@@ -1,58 +1,65 @@
 import React from "react";
+import { ImageElement } from "./ImageElement.js";
 
 export class ItemPictureGallery extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      URLElements: []
+      URLElements: [],
+      visiblePictureId: 0
     };
-
-    this.parseURLs = this.parseURLs.bind(this);
-    this.createElementForPicture = this.createElementForPicture.bind(this);
+    this.fillState = this.fillState.bind(this);
+    this.increaseVisiblePicture = this.increaseVisiblePicture.bind(this);
+    this.reduceVisiblePicture = this.reduceVisiblePicture.bind(this);
   }
 
-  parseURLs(URLArray) {
-    for (let URLIndex = 0; URLIndex < URLArray.length; URLIndex++) {
+  fillState = () => {
+    for (
+      let imageIndex = 0;
+      imageIndex < this.props.URLStack.length;
+      imageIndex++
+    ) {
       this.state.URLElements.push(
-        this.createElementForPicture(URLArray[URLIndex])
+        <ImageElement
+          image={this.props.URLStack[imageIndex]}
+          key={imageIndex + this.props.keyFigure}
+        />
       );
+    }
+  };
+
+  increaseVisiblePicture() {
+    if (this.state.visiblePictureId < this.state.URLElements.length - 1) {
+      this.setState({ visiblePictureId: this.state.visiblePictureId + 1 });
+    } else {
+      this.setState({ visiblePictureId: 0 });
     }
   }
 
-  createElementForPicture(URL) {
-    return "<img src={require('" + URL + "')} />";
+  reduceVisiblePicture() {
+    if (this.state.visiblePictureId === 0) {
+      this.setState({ visiblePictureId: this.state.URLElements.length - 1 });
+    } else if (this.state.visiblePictureId < this.state.URLElements) {
+      this.setState({ visiblePictureId: this.state.visiblePictureId - 1 });
+    } else {
+      this.setState({ visiblePictureId: this.state.visiblePictureId - 1 });
+    }
   }
 
   componentWillMount() {
-    console.log("wow");
+    this.fillState();
   }
 
   render() {
-    this.parseURLs(this.props.URLStack);
-
-    console.log(this.state.URLElements);
-
-    for (
-      let elementIndex = 0;
-      elementIndex < this.state.URLElements.length;
-      elementIndex++
-    ) {
-      console.log(this.state.URLElements[elementIndex]);
-    }
-
-    let TestImage = this.state.URLElements[0];
-    let OtherTestImage = (
-      <img src={require("../pictures/happy-placeholder-star.jpg")} />
-    );
-
     return (
       <div>
-        {this.createElementForPicture("../pictures/happy-placeholder-star.jpg")}
-        <img src={require("../pictures/happy-placeholder-star.jpg")} />
-        <img src={require("../pictures/unhappy-placeholder-star.jpg")} />
-        {OtherTestImage}
-        <div>{TestImage}</div>
+        {this.state.URLElements[this.state.visiblePictureId]}
+        <h3>
+          {this.state.visiblePictureId + 1} of {this.state.URLElements.length}
+        </h3>
+        <button onClick={this.reduceVisiblePicture}>Previous picture</button>
+        <button onClick={this.increaseVisiblePicture}>Next picture</button>
       </div>
     );
   }
