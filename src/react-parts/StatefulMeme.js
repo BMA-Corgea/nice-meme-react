@@ -101,24 +101,23 @@ export class StatefulMeme extends React.Component {
         <br />
         <br />
         <h1>______________________________</h1>
-        <PasswordField children="Hi world" password="Meme" />
+        <PasswordField password="Meme">
+          <h3>Hello World</h3>
+        </PasswordField>
         <br />
         <br />
         <h1>______________________________</h1>
         <h3>Unlock Kara</h3>
-        <PasswordField
-          children={
-            <ItemBox
-              URLStack={karaPics}
-              keyFigure="Cute"
-              galleryDesc="These are pictures of Kara from Detroit: Become Human"
-              itemTitle="AX400 (Kara android from Detroit: Become Human)"
-              price="1337"
-              region={this.state.region}
-            />
-          }
-          password="Kara"
-        />
+        <PasswordField password="Kara">
+          <ItemBox
+            URLStack={karaPics}
+            keyFigure="Cute"
+            galleryDesc="These are pictures of Kara from Detroit: Become Human"
+            itemTitle="AX400 (Kara android from Detroit: Become Human)"
+            price="1337"
+            region={this.state.region}
+          />
+        </PasswordField>
         <br />
         <br />
       </div>
