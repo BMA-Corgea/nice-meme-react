@@ -3,6 +3,7 @@ import { ItemPictureGallery } from "./ItemPictureGallery.js";
 import { PriceTag } from "./PriceTag.js";
 
 export class ItemBox extends React.Component {
+  //This component needs props itemTitle, URLStack, keyFigure, galleryDesc, price, and region
   render() {
     return (
       <div className="standardItem">

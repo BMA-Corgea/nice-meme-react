@@ -1,6 +1,7 @@
 import React from "react";
 
 export class PriceTag extends React.Component {
+  //The props for this component are region and price
   render() {
     let regionModifier;
 

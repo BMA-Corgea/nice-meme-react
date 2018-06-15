@@ -1,6 +1,8 @@
 import React from "react";
 
 export class PasswordField extends React.Component {
+  //The prop for this component is password.
+  //It also accepts children that will be shown after a correct password is entered
   constructor(props) {
     super(props);
 

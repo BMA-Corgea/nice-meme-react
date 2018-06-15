@@ -1,6 +1,7 @@
 import React from "react";
 
 export class ImageElement extends React.Component {
+  //This element needs 3 props: image, alt, and desc
   render() {
     return (
       <div>

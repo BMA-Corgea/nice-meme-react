@@ -2,6 +2,7 @@ import React from "react";
 import { ImageElement } from "./ImageElement.js";
 
 export class ItemPictureGallery extends React.Component {
+  //The props for this component are URLStack and keyFigure
   constructor(props) {
     super(props);
 

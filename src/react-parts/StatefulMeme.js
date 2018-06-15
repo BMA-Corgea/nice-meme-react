@@ -9,6 +9,7 @@ import { ItemBox } from "./ItemBox.js";
 import { PriceTag } from "./PriceTag.js";
 import { RegionSelecter } from "./RegionSelecter.js";
 import { PasswordField } from "./PasswordField.js";
+import { ChildList } from "./ChildList.js";
 
 export class StatefulMeme extends React.Component {
   constructor(props) {
@@ -118,6 +119,10 @@ export class StatefulMeme extends React.Component {
             region={this.state.region}
           />
         </PasswordField>
+        <br />
+        <br />
+        <h1>______________________________</h1>
+        <ChildList />
         <br />
         <br />
       </div>
