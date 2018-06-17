@@ -10,6 +10,8 @@ import { PriceTag } from "./PriceTag.js";
 import { RegionSelecter } from "./RegionSelecter.js";
 import { PasswordField } from "./PasswordField.js";
 import { ChildList } from "./ChildList.js";
+import { StatBar } from "./StatBar.js";
+import { NavBar } from "./NavBar.js";
 
 export class StatefulMeme extends React.Component {
   constructor(props) {
@@ -56,6 +58,12 @@ export class StatefulMeme extends React.Component {
 
     return (
       <div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <h1>
           {this.state.meme}, Mr. {this.state.name}!
         </h1>
@@ -119,6 +127,26 @@ export class StatefulMeme extends React.Component {
             region={this.state.region}
           />
         </PasswordField>
+        <br />
+        <br />
+        <h1>______________________________</h1>
+        <StatBar>
+          <h1>Black Map Stats</h1>
+          <h3>The region is: {this.state.region}</h3>
+          <h3>The name is: {this.state.name}</h3>
+          <h3>
+            The meme is: <strong>{this.state.meme}</strong>
+          </h3>
+        </StatBar>
+        <NavBar>
+          <h3>Home Page</h3>
+          <h3>Meme 1</h3>
+          <h3>Meme 2</h3>
+          <h3>
+            <a href="https://www.blackmapartistry.com">Meme 3</a>
+          </h3>
+          <h3>Footer</h3>
+        </NavBar>
         <br />
         <br />
         <h1>______________________________</h1>

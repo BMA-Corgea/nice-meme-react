@@ -7,6 +7,7 @@ export class RegionSelecter extends React.Component {
 
     this.changeRegion = this.changeRegion.bind(this);
   }
+
   changeRegion(e) {
     let regionValue = e.target.value;
 

@@ -1,3 +1,9 @@
+body {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/nice-meme-react%20Background.jpg?alt=media&token=40281c6f-a3b6-42f1-9538-10a8eaf31255");
+  background-size: cover;
+  background-position: center;
+}
+
 .App {
   text-align: center;
 }
@@ -27,13 +33,39 @@
   width: 100px;
 }
 
+.stat-bar {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  border: 1px solid green;
+  padding: 0px 30px 0px 0px;
+}
+
+.stat-bar ul {
+  list-style-type: none;
+}
+
+.nav-bar {
+  position: fixed;
+  width: 100%;
+  top: 20px;
+  border: 1px solid rgba(200, 165, 227, 0.4);
+  clear: both;
+  background-color: rgba(200, 165, 227, 0.4);
+}
+
+.nav-children {
+  display: table-cell;
+  padding: 0px 50px;
+  opacity: 1;
+}
+
 .standardItem {
   border: 1px solid blue;
-  width: 400px;
-  position: relative;
-  left: 20px;
   margin: 20px;
-  padding-top: 20px;
+  padding: 20px;
+  clear: both;
+  display: inline-block;
 }
 
 .standardItem:hover {

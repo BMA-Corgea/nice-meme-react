@@ -8,5 +8,9 @@ export const firebasePictures = {
   karaWithoutBeanie:
     "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/1528589810184.png?alt=media&token=5d0a3802-e95e-4451-8a11-03da90e42da5",
   karaWithBeanie:
-    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/detroit-become-human-part10.jpg?alt=media&token=d81c4b30-e1c7-42fc-af86-eebb8737df78"
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/detroit-become-human-part10.jpg?alt=media&token=d81c4b30-e1c7-42fc-af86-eebb8737df78",
+  cogGif:
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/1348204508804.gif?alt=media&token=bb3a216d-fb05-470f-95e3-bf7f8cc58021",
+  giantWhale:
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/1356214857141.jpg?alt=media&token=f261534a-3721-4670-8e56-db84d5a7d161"
 };
