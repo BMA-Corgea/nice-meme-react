@@ -78,13 +78,23 @@ export class LootBoxHolder extends React.Component {
   }
 
   handleClick() {
-    if (this.state.boxAmount >= 1) {
-      this.setState({
-        boxAmount: this.state.boxAmount - 1
-      });
+    if (
+      this.state.box1box === "unlocked" &&
+      this.state.box2box === "unlocked" &&
+      this.state.box3box === "unlocked" &&
+      this.state.box4box === "unlocked" &&
+      this.state.box5box === "unlocked"
+    ) {
+      if (this.state.boxAmount >= 1) {
+        this.setState({
+          boxAmount: this.state.boxAmount - 1
+        });
 
-      this.rebox();
-      this.setBoxStates();
+        this.rebox();
+        this.setBoxStates();
+      }
+    } else {
+      alert("Will you please unlock all your boxes first?");
     }
   }
 
@@ -111,8 +121,20 @@ export class LootBoxHolder extends React.Component {
   }
 
   handleBoxBuy(event) {
-    this.buyBoxes(this.state.currentInput);
-    event.preventDefault();
+    if (Number(this.props.wallet) >= Number(this.state.currentBoxQuantity)) {
+      this.buyBoxes(this.state.currentBoxQuantity);
+      this.props.onClick(this.state.currentBoxQuantity);
+      event.preventDefault();
+    } else {
+      console.log(
+        "The amount of boxes is " +
+          this.state.currentBoxQuantity +
+          " and the amount of wallet is " +
+          this.props.wallet
+      );
+      alert("Give me more money, broke boi!");
+      event.preventDefault();
+    }
   }
 
   buyBoxChange(event) {

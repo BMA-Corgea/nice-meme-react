@@ -20,6 +20,7 @@ export class LootBox extends React.Component {
           src={firebasePictures.chest}
           onClick={this.handleUnlock}
           alt="loot box"
+          className="closedLootBox"
         />
       );
     } else if (this.props.openStatus === "unlocked") {
