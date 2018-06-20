@@ -12,6 +12,8 @@ import { PasswordField } from "./PasswordField.js";
 import { ChildList } from "./ChildList.js";
 import { StatBar } from "./StatBar.js";
 import { NavBar } from "./NavBar.js";
+import { Footer } from "./Footer.js";
+import { LootBoxHolder } from "./LootBoxHolder.js";
 
 export class StatefulMeme extends React.Component {
   constructor(props) {
@@ -143,7 +145,7 @@ export class StatefulMeme extends React.Component {
           <h3>Meme 1</h3>
           <h3>Meme 2</h3>
           <h3>
-            <a href="https://www.blackmapartistry.com">Meme 3</a>
+            <a href="https://www.blackmapartistry.com">Website</a>
           </h3>
           <h3>Footer</h3>
         </NavBar>
@@ -153,6 +155,16 @@ export class StatefulMeme extends React.Component {
         <ChildList />
         <br />
         <br />
+        <h1>______________________________</h1>
+        <LootBoxHolder />
+        <br />
+        <br />
+        <Footer>
+          <h3>YouTube</h3>
+          <h3>Twitter</h3>
+          <h3>Instagram</h3>
+          <h3>Podcast</h3>
+        </Footer>
       </div>
     );
   }

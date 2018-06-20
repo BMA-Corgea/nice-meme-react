@@ -28,6 +28,19 @@ body {
   font-size: large;
 }
 
+.footer {
+  width: 100%;
+  bottom: 0px;
+  border: 1px solid rgba(200, 165, 227, 0.4);
+  clear: both;
+  background-color: rgba(200, 165, 227, 0.4);
+}
+
+.footer-children {
+  display: table-cell;
+  padding: 0px 50px;
+}
+
 .standardButton {
   height: 75px;
   width: 100px;
@@ -57,7 +70,11 @@ body {
 .nav-children {
   display: table-cell;
   padding: 0px 50px;
-  opacity: 1;
+}
+
+.lootBox {
+  display: table-cell;
+  padding: 0px 10px;
 }
 
 .standardItem {

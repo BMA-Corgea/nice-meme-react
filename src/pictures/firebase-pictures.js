@@ -12,5 +12,17 @@ export const firebasePictures = {
   cogGif:
     "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/1348204508804.gif?alt=media&token=bb3a216d-fb05-470f-95e3-bf7f8cc58021",
   giantWhale:
-    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/1356214857141.jpg?alt=media&token=f261534a-3721-4670-8e56-db84d5a7d161"
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/1356214857141.jpg?alt=media&token=f261534a-3721-4670-8e56-db84d5a7d161",
+  gray:
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/Gray.jpg?alt=media&token=7d3f58b6-778b-4693-8c5e-abbf0b435bcd",
+  green:
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/Green.jpg?alt=media&token=5f5e0624-8010-4697-9f41-cbb441554e8c",
+  blue:
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/Blue.jpg?alt=media&token=a670a53e-572f-46c8-9637-f3a04ce494cb",
+  purple:
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/Purple.jpg?alt=media&token=ca1b317a-7cf4-40c9-8921-d837feb6d1b2",
+  orange:
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/Orange.jpg?alt=media&token=66e195f3-c39b-4a36-a714-47f78c61ab5f",
+  chest:
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/Chest.jpg?alt=media&token=3003c677-d859-4eac-b7ef-5c3b52d59100"
 };
