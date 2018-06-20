@@ -5,39 +5,19 @@ export class StatBar extends React.Component {
     super(props);
 
     this.state = {
-      childElements: [],
       hideStatus: "unhidden"
     };
 
-    this.pushToState = this.pushToState.bind(this);
     this.handleHide = this.handleHide.bind(this);
     this.handleUnhide = this.handleUnhide.bind(this);
     this.hideFunctionality = this.hideFunctionality.bind(this);
-  }
-
-  pushToState() {
-    let elementIndex = 0;
-
-    this.setState({
-      childElements: this.props.children.map(child => {
-        return (
-          <li key={elementIndex++} className="stat-children">
-            {child}
-          </li>
-        );
-      })
-    });
-  }
-
-  componentWillMount() {
-    this.pushToState();
   }
 
   hideFunctionality() {
     if (this.state.hideStatus === "unhidden") {
       return (
         <div>
-          <ul>{this.state.childElements}</ul>
+          {this.props.children}
           <br />
           <button onClick={this.handleHide}>Hide Stat Bar</button>
         </div>
