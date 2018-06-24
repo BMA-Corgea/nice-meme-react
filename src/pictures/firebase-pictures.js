@@ -24,5 +24,13 @@ export const firebasePictures = {
   orange:
     "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/Orange.jpg?alt=media&token=66e195f3-c39b-4a36-a714-47f78c61ab5f",
   chest:
-    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/Chest.jpg?alt=media&token=3003c677-d859-4eac-b7ef-5c3b52d59100"
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/Chest.jpg?alt=media&token=3003c677-d859-4eac-b7ef-5c3b52d59100",
+  frontPageBackground:
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/True%20Background.jpg?alt=media&token=d5571b2b-a285-4f57-bb5a-01a58ab447a3",
+  UnhighlightedTriangle:
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/Unhighlighted%20Triangle.jpg?alt=media&token=ebaf7b82-a69e-4f4a-8ea2-c4ef11ccd2de",
+  HighlightedTriangle:
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/Highlighted%20Triangle.jpg?alt=media&token=0a3c1f73-49b8-48fd-9013-9266cc818201",
+  plusSign:
+    "https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/Plus%20Sign.jpg?alt=media&token=b1b9f8c7-98ce-4821-95e4-dec4f794d192"
 };

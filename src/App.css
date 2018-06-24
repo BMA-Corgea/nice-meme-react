@@ -1,5 +1,5 @@
 body {
-  background-image: url("https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/nice-meme-react%20Background.jpg?alt=media&token=40281c6f-a3b6-42f1-9538-10a8eaf31255");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/bma-home-base.appspot.com/o/True%20Background.jpg?alt=media&token=d5571b2b-a285-4f57-bb5a-01a58ab447a3");
   background-size: cover;
   background-position: center;
 }
@@ -29,16 +29,23 @@ body {
 }
 
 .footer {
+  position: relative;
+  bottom: 0px;
   width: 100%;
   bottom: 0px;
-  border: 1px solid rgba(200, 165, 227, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.4);
   clear: both;
-  background-color: rgba(200, 165, 227, 0.4);
 }
 
 .footer-children {
   display: table-cell;
   padding: 0px 50px;
+}
+
+.moreOptions {
+  border: 1px solid rgba(0, 0, 0, 1);
+  background-color: black;
+  color: white;
 }
 
 .standardButton {
@@ -62,9 +69,8 @@ body {
   position: fixed;
   width: 100%;
   top: 20px;
-  border: 1px solid rgba(200, 165, 227, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.4);
   clear: both;
-  background-color: rgba(200, 165, 227, 0.4);
 }
 
 .nav-children {
@@ -73,6 +79,11 @@ body {
 }
 
 .lootBox {
+  display: table-cell;
+  padding: 0px 10px;
+}
+
+.attributeLayout {
   display: table-cell;
   padding: 0px 10px;
 }
@@ -92,6 +103,13 @@ body {
   padding: 20px;
   clear: both;
   display: inline-block;
+}
+
+.SubpageButton {
+  border: 1px solid black;
+  display: table-cell;
+  padding: 20px;
+  margin: 20px;
 }
 
 .standardItem:hover {

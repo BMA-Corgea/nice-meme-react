@@ -15,6 +15,9 @@ import { NavBar } from "./NavBar.js";
 import { Footer } from "./Footer.js";
 import { LootBoxHolder } from "./LootBoxHolder.js";
 import { PutInFunds } from "./PutInFunds.js";
+import { AttributeHolder } from "./AttributeHolder.js";
+import { Attribute } from "./Attribute.js";
+import { LevelUp } from "./LevelUp.js";
 
 export class StatefulMeme extends React.Component {
   constructor(props) {
@@ -23,13 +26,17 @@ export class StatefulMeme extends React.Component {
       name: "Dabberton",
       meme: "Nice meme",
       region: "America",
-      wallet: 0
+      wallet: 0,
+      availablePoints: 5,
+      currentLevel: 1
     };
     this.changeTitleName = this.changeTitleName.bind(this);
     this.changeTitleMeme = this.changeTitleMeme.bind(this);
     this.changeRegionMeme = this.changeRegionMeme.bind(this);
     this.handleFundsIncrease = this.handleFundsIncrease.bind(this);
     this.handleBoxWallet = this.handleBoxWallet.bind(this);
+    this.availablePointsChange = this.availablePointsChange.bind(this);
+    this.handleLevelUp = this.handleLevelUp.bind(this);
   }
 
   changeTitleName(newTitleName) {
@@ -59,6 +66,19 @@ export class StatefulMeme extends React.Component {
   handleBoxWallet(boxAmount) {
     this.setState({
       wallet: Number(this.state.wallet) - Number(boxAmount)
+    });
+  }
+
+  availablePointsChange(newPointAmount) {
+    this.setState({
+      availablePoints: newPointAmount
+    });
+  }
+
+  handleLevelUp(statPoints) {
+    this.setState({
+      availablePoints: Number(this.state.availablePoints) + Number(statPoints),
+      currentLevel: Number(this.state.currentLevel) + 1
     });
   }
 
@@ -156,6 +176,8 @@ export class StatefulMeme extends React.Component {
             The meme is: <strong>{this.state.meme}</strong>
           </h3>
           <h3>Your wallet containes: {this.state.wallet}</h3>
+          <h3>Available Stat Points: {this.state.availablePoints}</h3>
+          <h3>Your current level is: {this.state.currentLevel}</h3>
         </StatBar>
         <NavBar>
           <h3>Home Page</h3>
@@ -181,6 +203,29 @@ export class StatefulMeme extends React.Component {
         <br />
         <h1>______________________________</h1>
         <PutInFunds onClick={this.handleFundsIncrease} />
+        <br />
+        <br />
+        <h1>______________________________</h1>
+        <ItemBox
+          URLStack={karaPics}
+          keyFigure="Cute"
+          galleryDesc="These are pictures of Kara from Detroit: Become Human"
+          itemTitle="AX400 (Kara android from Detroit: Become Human)"
+        />
+        <br />
+        <br />
+        <h1>______________________________</h1>
+        <AttributeHolder
+          availablePoints={this.state.availablePoints}
+          onClick={this.availablePointsChange}
+        />
+        <br />
+        <br />
+        <LevelUp onClick={this.handleLevelUp} />
+        <br />
+        <br />
+        <h1>______________________________</h1>
+        <Attribute attributeTitle="Strength" attributeMagnitude={Number(44)} />
         <br />
         <br />
         <Footer>
